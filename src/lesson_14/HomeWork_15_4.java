@@ -1,4 +1,4 @@
-package lesson_15; /* Group: 52-1, "AIT Hi-tech team" GMBH
+package lesson_14; /* Group: 52-1, "AIT Hi-tech team" GMBH
 Author: Bogdan Fesenko
 Date: 28-09-2024
 */
@@ -12,27 +12,27 @@ import java.util.Scanner;
 
 public class HomeWork_15_4 {
     public static void main(String[] args) {
-        // Создаем сканер для ввода данных от пользователя
+        // сканируем ввод данных
         Scanner scanner = new Scanner(System.in);
 
-        // Просим пользователя ввести слово
+        // Просим ввести слово
         System.out.print("Введите слово: ");
         String word = scanner.nextLine().toLowerCase(); // Приводим слово к нижнему регистру
 
-        // Список гласных для русского и английского языков
+        // Список всех гласных для русского и английского языков
         String vowelsList = "аеёиоуыэюяaeiou";
 
-        // Подсчет гласных с помощью Stream API
+        // Подсчет гласных
         long vowels = word.chars()
                 .filter(c -> vowelsList.indexOf(c) != -1)
                 .count();
 
-        // Подсчет согласных с учетом обеих систем письма (латиница и кириллица)
+        // Подсчет согласных рус ангд
         long consonants = word.chars()
                 .filter(c -> Character.isLetter(c) && vowelsList.indexOf(c) == -1)
                 .count();
 
-        // Вывод результатов
+        // Выводим
         System.out.println("Гласные: " + vowels);
         System.out.println("Согласные: " + consonants);
     }
