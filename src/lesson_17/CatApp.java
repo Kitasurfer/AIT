@@ -1,16 +1,15 @@
 package lesson_17;
 
-public class TatApp {
+public class CatApp {
     public static void main(String[] args) {
-        Tat17 tat = new Tat17("Catty", 8, 5);
+        Cat17 cat = new Cat17("Catty", 8, 5);
 
         // Cat17 cat2 = new Cat17();
 
 
-        tat.sayMeow();
+        cat.sayMeow();
 
-        System.out.println(tat.toString());
-
+        System.out.println(cat.toString());
 
 
 //        cat.age = -1000;
@@ -20,18 +19,18 @@ public class TatApp {
 //        cat.name = null;
 //
 //        cat.test();
-        String name = tat.getName();
+        String name = cat.getName();
         System.out.println("name = " + name);
-        System.out.println("Вес: " + tat.getWeight());
+        System.out.println("Вес: " + cat.getWeight());
 
-        System.out.println("Возраст: " + tat.getAge());
+        System.out.println("Возраст: " + cat.getAge());
 
-        tat.setAge(18);
-        System.out.println("Текущий возраст: " + tat.getAge());
+        cat.setAge(18);
+        System.out.println("Текущий возраст: " + cat.getAge());
 
-        tat.setName("Max");
+        cat.setName("Max");
 
-        System.out.println(tat.toString());
+        System.out.println(cat.toString());
 
         System.out.println(" =============== \n");
     }

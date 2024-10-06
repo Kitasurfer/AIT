@@ -1,26 +1,26 @@
 package lesson_17;
 
-public class Tat17 {
+public class Cat17 {
     private String name;
     private int age;
     private int weight;
 
-    public Tat17(String name, int age, int weight) {
+    public Cat17(String name, int age, int weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
     }
 
     // Геттеры и сеттеры
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public int getWeight(){
+    public int getWeight() {
         return weight;
     }
 
@@ -41,9 +41,8 @@ public class Tat17 {
         this.name = name;
     }
 
-    private Tat17() {
+    private Cat17() {
     }
-
 
 
     private void testMethod() {
