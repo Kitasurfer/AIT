@@ -6,7 +6,7 @@ Date: 11-10-2024
 /*
 
  */
-public class Triangle extends Shape{
+public class Triangle extends Shape {
 
     private final int a;
     private final int b;
@@ -23,5 +23,11 @@ public class Triangle extends Shape{
         // double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
 
         return 0.5 * this.a * this.b;
+    }
+
+    @Override
+    public String toString() {
+        return "Треугольник с основанием: " + a + " и высотой: " + b;
+
     }
 }

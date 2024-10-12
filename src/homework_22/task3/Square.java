@@ -6,7 +6,7 @@ Date: 11-10-2024
 /*
 
  */
-public class Square extends Shape{
+public class Square extends Shape {
 
     private final int side;
 
@@ -17,5 +17,10 @@ public class Square extends Shape{
     @Override
     public double area() {
         return this.side * this.side;
+    }
+
+    @Override
+    public String toString() {
+        return "Квадрат со стороной: " + side;
     }
 }

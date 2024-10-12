@@ -6,9 +6,9 @@ Date: 11-10-2024
 /*
 
  */
-public class Circle extends Shape{
+public class Circle extends Shape {
 
-    private final int radius;
+    private double radius;
 
     public Circle(int radius) {
         this.radius = radius;
@@ -16,6 +16,13 @@ public class Circle extends Shape{
 
     @Override
     public double area() {
-        return 2 * Math.PI * this.radius * this.radius;
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Круг с радиусом " + radius;
     }
 }
+
+
