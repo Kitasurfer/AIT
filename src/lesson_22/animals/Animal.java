@@ -10,6 +10,13 @@ Date: 11-10-2024
     представления объекта.
  */
 public class Animal {
+
+    public String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
     // Метод, который будет переопределен в дочерних классах
     public void voice() {
         System.out.println("Animal say something");
@@ -18,7 +25,7 @@ public class Animal {
 
     // Метод toString, который возвращает строковое представление объекта
     public String toString() {
-        return "Animal string";
+        return "Animal name: " + this.name;
     }
 }
 

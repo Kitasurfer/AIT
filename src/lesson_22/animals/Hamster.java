@@ -8,9 +8,19 @@ Date: 11-10-2024
     Он переопределяет метод voice(), чтобы отразить специфическое поведение хомяка.
  */
 public class Hamster extends Animal {
+    public Hamster(String name) {
+        super(name);
+    }
+
     // Переопределяем метод voice(), чтобы хомяк издавал свой звук
     @Override
     public void voice() {
         System.out.println("Hamster say NOM-NOM!");
     }
+
+    @Override
+    public String toString() {
+        return "Hamster name: " + this.name;
+    }
+
 }

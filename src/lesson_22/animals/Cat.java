@@ -9,6 +9,10 @@ Date: 11-10-2024
  */
 public class Cat extends Animal {
 
+    public Cat(String name) {
+        super(name);
+    }
+
     // Метод eat — это уникальный метод для класса Cat, его нет в родительском классе
     public void eat() {
         System.out.println("Cat eat");
@@ -23,7 +27,7 @@ public class Cat extends Animal {
     // Переопределяем метод toString() для вывода строки, характерной для объекта Cat
     @Override
     public String toString() {
-        return "Cat.toString";
+        return "Cat name: " + this.name;
     }
 
     // Перегруженный метод voice с параметром

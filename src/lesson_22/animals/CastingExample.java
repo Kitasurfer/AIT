@@ -10,7 +10,7 @@ public class CastingExample {
     public static void main(String[] args) {
         // Восходящее преобразование (upcasting)
         // Создаем объект Cat и преобразуем его к типу Animal
-        Animal animal = new Cat(); // Восходящее преобразование
+        Animal animal = new Cat("cat"); // Восходящее преобразование
         animal.voice(); // Вызывается переопределенный метод voice() из класса Cat
 
 
@@ -26,14 +26,14 @@ public class CastingExample {
         }
 
         // Пример создания других объектов животных
-        Animal animal3 = new Dog();
-        Animal animal4 = new Hamster();
+        Animal animal3 = new Dog("dog");
+        Animal animal4 = new Hamster("hamster");
 
         // Создаем массив животных и корректно индексируем его
         Animal[] animals = new Animal[3];
         animals[0] = animal3;
         animals[1] = animal4;
-        animals[2] = new Cat(); // Инициализируем последний элемент массива
+        animals[2] = new Cat("cat"); // Инициализируем последний элемент массива
 
         // Вызываем методы voice() для каждого объекта в массиве
         for (int i = 0; i < animals.length; i++) {
@@ -52,11 +52,11 @@ public class CastingExample {
 
         // Пример нисходящего преобразования
         Cat catLink;
-        Animal animalLink = new Cat();
+        Animal animalLink = new Cat("cat");
         catLink = (Cat) animalLink; // Нисходящее преобразование
 
         // Пример с ошибкой, если бы объект не был экземпляром подкласса
-        Animal animal2 = new Animal();
+        Animal animal2 = new Animal("animal");
         if (animal2 instanceof Cat) {
             Cat cat2 = (Cat) animal2; // Этот код не выполнится, так как animal2 — не Cat
         } else {

@@ -9,13 +9,19 @@ import lesson_22.animals.Dog;
 import lesson_22.animals.Hamster;
 
 /*
-
+Task 0
+Воспроизвести код, написанный на уроке.
  */
-public class Zoopark  {
+public class Zoo {
     public static void main(String[] args) {
 
-        Animal[] animals = new Animal[]{new Cat("Barsik"), new Dog("Jack"), new Hamster("Homyak")};
-        for (Animal animal: animals){
+        Animal[] animals = new Animal[]{
+                new Cat("Barsik"),
+                new Dog("Jack"),
+                new Hamster("Homyak")
+        };
+
+        for (Animal animal : animals) {
             System.out.println(animal);
             animal.voice();
         }
