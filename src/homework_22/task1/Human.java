@@ -22,6 +22,6 @@ class Human {
     }
 
     public void rest() {
-        System.out.println("Время для отдыха: " + this.rest);
+        System.out.println(this.name + " Время для отдыха: " + this.rest + " км/ч.");
     }
 }
