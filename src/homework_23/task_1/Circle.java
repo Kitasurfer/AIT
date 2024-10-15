@@ -10,8 +10,10 @@ Date: 14-10-2024
 public class Circle extends Shape {
     private final double radius; // радиус
 
+
     public Circle(double radius) { // Конструктор принимает радиус
         this.radius = radius;
+        this.type = "Circle";
     }
 
     @Override

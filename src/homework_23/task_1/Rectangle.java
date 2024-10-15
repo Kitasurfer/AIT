@@ -14,6 +14,7 @@ public class Rectangle extends Shape {
     public Rectangle(double a, double b) {
         this.a = a; // Конструктор принимает стороны
         this.b = b;
+        this.type = "Rectangle";
     }
 
     @Override

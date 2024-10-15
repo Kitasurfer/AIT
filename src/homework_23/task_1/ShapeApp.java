@@ -1,32 +1,41 @@
-package homework_23.task_1;/* Group: 52-1, "AIT Hi-tech team" GMBH 
-Author: Bogdan Fesenko
-Date: 14-10-2024
-*/
+package homework_23.task_1;
 
-/*
-Основной класс для работы с фигурами.
-Создает массив объектов фигур и вычисляет их площадь и периметр.
- */
 public class ShapeApp {
-    public static void main(String[] args) {
 
-        Shape[] shapes = new Shape[] { // массив фигур круг, прямоугольник, треугольник
-                new Circle(5),
-                new Rectangle(4, 6),
-                new Triangle(3,4,5)
+    public static void main(String[] args) {
+        // Создаем массив объектов фигур
+        Shape[] shapes = new Shape[] {
+                new Circle(5),           // Круг с радиусом 5
+                new Rectangle(4, 6),      // Прямоугольник 4x6
+                new Triangle(2, 4, 3)    // Некорректный треугольник
         };
 
-        double totalArea = 0; // Переменные для общей площади и периметра всех фигур
+        // Переменные для хранения общей площади и периметра всех фигур
+        double totalArea = 0;
         double totalPerimeter = 0;
 
+        // Цикл по всем фигурам
         for (Shape shape : shapes) {
-            totalArea += shape.area(); // Складываем площадь
-            totalPerimeter += shape.perimeter(); // Складываем периметр
+            // Вычисляем площадь и периметр для каждой фигуры
+            double area = shape.area();
+            double perimeter = shape.perimeter();
+
+            // Определяем тип фигуры (можно добавить метод getType() в каждом классе)
+            if (shape instanceof Circle) {
+                System.out.println(shape.type + ": Площадь = " + area + ", Периметр = " + perimeter);
+            } else if (shape instanceof Rectangle) {
+                System.out.println(shape.type + ": Площадь = " + area + ", Периметр = " + perimeter);
+            } else if (shape instanceof Triangle) {
+                System.out.println(shape.type + ": Площадь = " + area + ", Периметр = " + perimeter);
+            }
+
+            // Суммируем площади и периметры
+            totalArea += area;
+            totalPerimeter += perimeter;
         }
 
-        System.out.println("Общая площадь всех фигур: " + totalArea);
+        // Вывод общей площади и периметра всех фигур
+        System.out.println("\nОбщая площадь всех фигур: " + totalArea);
         System.out.println("Общий периметр всех фигур: " + totalPerimeter);
-
     }
-
 }

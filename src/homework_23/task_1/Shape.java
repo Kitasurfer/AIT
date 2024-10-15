@@ -11,6 +11,8 @@ Task 1
 Создайте массив объектов Shape и вычислите общую площадь и периметр всех фигур в массиве.
  */
 abstract class Shape {
+    protected String type;
+
     abstract double area(); // Абстрактный метод для вычисления площади
 
     abstract double perimeter();// Абстрактный метод для вычисления периметра
