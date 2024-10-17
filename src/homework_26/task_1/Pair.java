@@ -25,45 +25,57 @@ pair.swap();
 System.out.println(pair.getFirst()); // Вывод: World
 System.out.println(pair.getSecond()); // Вывод: Hello
  */
-public class Pair <T>{
+public class Pair <T> {
+    // Два приватных поля для хранения значений одного типа
     private T first;
     private T second;
 
+    // Конструктор принимает два значения типа T и инициализирует их
     public Pair(T first, T second) {
         this.first = first;
         this.second = second;
     }
 
-    public void swap(){
-        //TODO:
+    // Метод для обмена значений first и second
+    public void swap() {
+        // Создаем временную переменную для хранения значения first
         T temp = first;
+        // Меняем местами first и second
         first = second;
         second = temp;
-
     }
 
+    // Метод для получения первого элемента
     public T getFirst() {
         return first;
     }
 
+    // Метод для установки значения первого элемента
     public void setFirst(T first) {
         this.first = first;
     }
 
+    // Метод для получения второго элемента
     public T getSecond() {
         return second;
     }
 
+    // Метод для установки значения второго элемента
     public void setSecond(T second) {
         this.second = second;
     }
 
+    // Пример использования класса Pair
     public static void main(String[] args) {
-        Pair<String> pair = new Pair<>("Hello", "Word");
-        System.out.println(pair.getFirst());
-        System.out.println(pair.getSecond());
+        // Создаем объект Pair с двумя строковыми значениями
+        Pair<String> pair = new Pair<>("Hello", "World");
+        // Выводим первое и второе значения
+        System.out.println(pair.getFirst()); // Вывод: Hello
+        System.out.println(pair.getSecond()); // Вывод: World
+        // Меняем местами значения
         pair.swap();
-        System.out.println(pair.getFirst());
-        System.out.println(pair.getSecond());
+        // Выводим значения после обмена
+        System.out.println(pair.getFirst()); // Вывод: World
+        System.out.println(pair.getSecond()); // Вывод: Hello
     }
 }
