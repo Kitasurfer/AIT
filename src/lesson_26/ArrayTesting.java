@@ -18,7 +18,7 @@ public class ArrayTesting {
         MyArrayList<Integer> numbers = new MyArrayList<>();
         // Создание объекта `MyArrayList` для хранения элементов типа `Integer`
 
-        numbers.add(1, 2, 3, 4, 5, 6);
+        numbers.addAll(1, 2, 3, 4, 5, 6);
         // Добавление нескольких элементов в список `numbers`
 
         System.out.println(numbers);
@@ -27,7 +27,7 @@ public class ArrayTesting {
         System.out.println(numbers.indexOf(4));
         // Поиск индекса элемента со значением 4 в списке и вывод этого индекса
 
-        System.out.println(numbers.removeByValue(5));
+        System.out.println(numbers.remove(5));
         // Удаление элемента со значением 5 из списка и вывод результата операции (успешно или нет)
         System.out.println(numbers);
         // Вывод измененного списка после удаления
@@ -37,15 +37,15 @@ public class ArrayTesting {
 
         strings.add("Java");
         // Добавление строки "Java" в список `strings`
-        strings.add("Python", "JS", "Scala", "Kotlin");
+        strings.addAll("Python", "JS", "Scala", "Kotlin");
         // Добавление нескольких строк в список `strings`
 
         System.out.println(strings);
         // Вывод содержимого списка `strings` в консоль
 
-        System.out.println(strings.removeByValue("Basic"));
+        System.out.println(strings.remove("Basic"));
         // Попытка удалить элемент со значением "Basic" из списка (скорее всего, это значение отсутствует в списке)
-        System.out.println(strings.removeByValue("Scala"));
+        System.out.println(strings.remove("Scala"));
         // Удаление элемента со значением "Scala" и вывод результата операции
         System.out.println(strings);
         // Вывод измененного списка после удаления

@@ -25,13 +25,13 @@ System.out.println(intPair.sum()); // Вывод: 30.0
 NumericPair<Double> doublePair = new NumericPair<>(5.5, 4.5);
 System.out.println(doublePair.sum()); // Вывод: 10.0
  */
-public class NumericPair<T extends Number> {
+public class NumericPair<T extends Number, C extends Number> {
 
     private T first;
-    private T second;
+    private C second;
 
     // Конструктор для инициализации пары чисел
-    public NumericPair(T first, T second) {
+    public NumericPair(T first, C second) {
         this.first = first;
         this.second = second;
     }
@@ -50,15 +50,16 @@ public class NumericPair<T extends Number> {
 
     public static void main(String[] args) {
         // Пример с целыми числами
-        NumericPair<Integer> intPair = new NumericPair<>(10, 20);
+        NumericPair<Integer, Double> intPair = new NumericPair<>(10, 2.0);
         System.out.println(intPair.sum()); // Вывод: 30.0
 
         // Пример с числами с плавающей точкой
-        NumericPair<Double> doublePair = new NumericPair<>(5.5, 4.5);
+        NumericPair<Integer, Integer> doublePair = new NumericPair<>(55, 45);
         System.out.println(doublePair.sum()); // Вывод: 10.0
 
         // Пример с BigDecimal
-        NumericPair<BigDecimal> bigDecimalPair = new NumericPair<>(new BigDecimal("3000000000000000"), new BigDecimal("4"));
-        System.out.println(bigDecimalPair.sum()); // Вывод: 3000000000000004.0
+        NumericPair<BigDecimal, BigDecimal> bigDecimalPair = new NumericPair<>(new BigDecimal("3000000000"),
+                new BigDecimal("4"));
+        System.out.println(bigDecimalPair.sum());
     }
 }
