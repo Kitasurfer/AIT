@@ -3,13 +3,6 @@ Author: Bogdan Fesenko
 Date: 21-10-2024
 */
 
-import lists.MyArrayList; // Импорт класса MyArrayList
-import lists.MyList; // Импорт интерфейса MyList
-
-import java.util.ArrayList; // Импорт стандартного класса ArrayList (не используется, можно удалить)
-
-import static homework_28.RectangleUtils.removeDuplicates; // Статический импорт метода removeDuplicates из класса RectangleUtils
-
 /*
 Task 1: Создание класса “Rectangle”
 Создайте класс Rectangle, который представляет прямоугольник со следующими полями:
@@ -84,33 +77,4 @@ public class Rectangle {
         return result;
     }
 
-    public static void main(String[] args) {
-        // Создание списка прямоугольников с использованием MyArrayList
-        MyList<Rectangle> rectangles = new MyArrayList<>();
-        rectangles.add(new Rectangle(5.0, 3.0));
-        rectangles.add(new Rectangle(4.0, 2.0));
-        rectangles.add(new Rectangle(5.0, 3.0)); // Дубликат
-        rectangles.add(new Rectangle(6.0, 4.0));
-        rectangles.add(new Rectangle(5.0, 3.0)); // Дубликат
-
-        // Вывод списка до удаления дубликатов
-        System.out.println("Список до удаления дубликатов:");
-
-        // Простой цикл for для вывода каждого объекта
-        for (Rectangle rect : rectangles) {
-            System.out.println(rect); // Вывод информации о прямоугольнике
-        }
-
-        // Создание прямоугольника, который нужно удалить
-        Rectangle rectangleToRemove = new Rectangle(5.0, 3.0);
-
-        // Вызов метода removeDuplicates для удаления всех дубликатов объекта rectangleToRemove
-        MyList<Rectangle> updatedList = removeDuplicates(rectangles, rectangleToRemove);
-
-        // Вывод списка после удаления дубликатов
-        System.out.println("\nСписок после удаления дубликатов:");
-        for (Rectangle rect : updatedList) {
-            System.out.println(rect); // Вывод информации о прямоугольнике
-        }
-    }
 }
