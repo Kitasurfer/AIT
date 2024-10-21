@@ -7,6 +7,10 @@ Date: 17-10-2024
 // Комментарий с информацией о группе, авторе и дате создания класса. Это полезно для отслеживания версий и ведения документации
 
 import java.lang.reflect.Array;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 public class MyArrayList<T> implements MyList<T> {
     // Объявление обобщенного класса `MyArrayList`, где `T` является параметром типа. Это позволяет использовать любой тип данных в классе
@@ -246,6 +250,34 @@ public class MyArrayList<T> implements MyList<T> {
 //        }
 
 
+    }
+    // Реализация метода iterator()
+    @Override
+    public Iterator<T> iterator() {
+        return new MyArrayListIterator();
+    }
+
+    // Внутренний класс для реализации итератора
+    private class MyArrayListIterator implements Iterator<T> {
+        private int currentIndex = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < cursor; // Проверяет, есть ли следующий элемент
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException(); // Выбрасывает исключение, если больше элементов нет
+            }
+            return array[currentIndex++]; // Возвращает текущий элемент и увеличивает индекс
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("Удаление через итератор не поддерживается.");
+        }
     }
 }
 

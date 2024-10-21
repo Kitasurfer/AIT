@@ -33,9 +33,49 @@ public class Person {
     5. До собаки должен быть хотя бы 1 символ
     6. Первый символ - должна быть буква
      */
-
-
     private boolean isEmailValid(String email) {
+
+        int index = email.indexOf('@');
+
+        // Должна присутствовать @ и только одна
+        int count = email.length() - email.replace("@", "").length();
+        if (count != 1) {
+            return false;
+        }
+        // Точка после собаки
+        int indexLast = email.lastIndexOf('.');
+        if (index > email.length() - 1) {
+            return false;
+        }
+
+        // После последней точки есть 2 или более символов
+        if (indexLast < email.length() - 2) {
+            return false;
+        }
+
+        // Алфавит, цифры, '-', '_', '.', '@'
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        String alphabet = "abcABC";
+        String digit = "0123456789";
+        String symbols = "-_.@";
+        if (!email.matches(emailRegex)) {
+            return false;
+        }
+
+        // До собаки должен быть хотя бы 1 символ
+        if (index < 1) {
+            return false;
+        }
+
+        // Первый символ - должна быть буква
+        if (!Character.isLetter(email.charAt(0))) {
+            return false;
+        }
+        return true;
+    }
+
+
+   /* private boolean isEmailValid(String email) {
 
         // 1. Должна присутствовать @
         int indexAt = email.indexOf('@');
@@ -57,7 +97,7 @@ public class Person {
 
 
         return true;
-    }
+    }*/
 
 
     public String getPassword() {
@@ -65,7 +105,16 @@ public class Person {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if(isPasswordValid(password)){
+            this.password = password;
+        }
+    }
+
+    private boolean isPasswordValid(String password) {
+
+        password.matches("^{8,}$");
+
+        return true;
     }
 
     @Override
