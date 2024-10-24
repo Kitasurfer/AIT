@@ -9,9 +9,10 @@ Task 1
 Написать тесты установки пароля в классе Person. Валидные / не валидные пароли.
  */
 
-import lesson_27.Person;
+import lesson_30.person.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -24,64 +25,60 @@ public class PasswordTest {
     void setUp() {
         // объект инициализируем с валидным email
         person = new Person("valid@test.com", "ValidPassword1!");
-
     }
 
     // Тесты валидных паролей
     @ParameterizedTest
     @MethodSource("validPasswordProvider")
-
-
     void testValidPasswordSet(String validPassword) {
         person.setPassword(validPassword);
         Assertions.assertEquals(validPassword, person.getPassword());
-
     }
 
-    //для валидных паролей
+    // для валидных паролей
     static Stream<String> validPasswordProvider() {
         return Stream.of(
                 "StrongPass1!", // Стандартный пароль
-                "Valid123!Abc",// с разными символами
+                "Valid123!Abc", // с разными символами
                 "Complex$P!a#ssword1", // пароль с символами
-                "Passw0rd@123",// пароль с цифрами заглавными и специальными символами
-                "My$Super123Passw345ordfghf!,"// длинный пароль
+                "Passw0rd@123", // пароль с цифрами заглавными и специальными символами
+                "My$Super123Passw345ordfghf!" // длинный пароль
         );
-
-
     }
-
-
 
     // Тесты для невалидных паролей
     @ParameterizedTest
     @MethodSource("invalidPasswordProvider")
-
-
     void testInvalidPasswordSet(String invalidPassword) {
         String previousPassword = person.getPassword(); // Сохраняем старый пароль
         person.setPassword(invalidPassword);
         Assertions.assertNotEquals(invalidPassword, person.getPassword()); // пароль не изменился
-        Assertions.assertEquals(previousPassword, person.getPassword());// старый пароль остался
+        Assertions.assertEquals(previousPassword, person.getPassword()); // старый пароль остался
     }
 
     // для невалидных паролей
     static Stream<String> invalidPasswordProvider() {
         return Stream.of(
-                "short1!",// короткий пароль
-                "NoSpecial123",// Нет специального символа
-                "NoDigit!",// Нет цифры
-                "NOLOWERCASE123!",// Нет строчных букв
-                "nouppercase123!",// Нет заглавных букв
-                "Password with space",//с пробелом
-                "123456789012",// Только цифры нет букв и специальных символов
+                "short1!", // короткий пароль
+                "NoSpecial123", // Нет специального символа
+                "NoDigit!", // Нет цифры
+                "NOLOWERCASE123!", // Нет строчных букв
+                "nouppercase123!", // Нет заглавных букв
+                "Password with space", // с пробелом
+                "123456789012", // Только цифры, нет букв и специальных символов
                 "passwordpassword", // Нет цифр и заглавных букв
-                "PASSWORDPASSWORD!",// Нет цифр и маленьких букв
-                "abcABC123"// Нет спец символа
+                "PASSWORDPASSWORD!", // Нет цифр и маленьких букв
+                "abcABC123", // Нет спец символа
+                null // null
         );
-
-
     }
 
-
+    // Тест для проверки установки null пароля
+    @Test
+    void testNullPassword() {
+        String previousPassword = person.getPassword(); // Сохраняем старый пароль
+        person.setPassword(null); // Устанавливаем null пароль
+        Assertions.assertNotEquals(null, person.getPassword()); // Проверяем, что пароль не изменился на null
+        Assertions.assertEquals(previousPassword, person.getPassword()); // Старый пароль остался
+    }
 }

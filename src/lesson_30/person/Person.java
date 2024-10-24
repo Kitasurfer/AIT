@@ -91,8 +91,14 @@ public class Person {
      * 6. Пароль не должен содержать пробелы
      */
     private boolean isPasswordValid(String password) {
-        // Если пароль null или меньше 12 символов, он невалиден
-        if (password == null || password.length() < 12) {
+        // Проверяем, что пароль не является null
+        if (password == null) {
+            System.out.println("Password cannot be null");
+            return false;
+        }
+
+        // Если пароль меньше 12 символов, он невалиден
+        if (password.length() < 12) {
             System.out.println("Password should be at least 12 characters long");
             return false;
         }
@@ -125,6 +131,7 @@ public class Person {
 
         return hasDigit && hasUpperCase && hasLowerCase && hasSpecialChar && hasNoSpaces;
     }
+
 
     // Проверка, является ли пароль распространенным
     private boolean isPasswordCommon(String password) {
