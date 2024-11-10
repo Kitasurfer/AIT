@@ -15,7 +15,13 @@ Task 1
  */
 public class WordFrequency {
     public static void main(String[] args) {
-        String text = "I love you, Java, Java world language";
+        String text = "I love you, Java. You are the language that opens doors to a world of possibilities. " +
+                "From creating robust applications to powering complex systems, Java stands as a universal language " +
+                "in the tech world. The Java community is vast, and its ecosystem is rich, providing tools and " +
+                "frameworks that enable developers to bring their ideas to life. Java is not just a programming" +
+                " language; it's a bridge to innovation and a cornerstone of modern technology. " +
+                "Thank you, Java, for being the language that unites developers worldwide in a shared passion " +
+                "for coding and creativity.";
 
         Map<String, Integer> frequenMap = getWorldFrequency(text);
         for(Map.Entry<String, Integer> entry : frequenMap.entrySet()) {

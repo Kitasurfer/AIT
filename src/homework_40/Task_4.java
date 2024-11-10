@@ -22,10 +22,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 public class Task_4 {
-    public static final int INITIAL_SIZE = 5_000; // начальный размер списка
-    public static final int INSERTIONS = 2_000; // Количество вставок для второго метода
-    public static final int DELETION_BY_INDEX = 1_000; // Количество удалений по индексу
-    public static final int DELETION_BY_VALUE = 1_000;// удаления по значению
+    public static final int INITIAL_SIZE = 50_000; // начальный размер списка
+    public static final int INSERTIONS = 20_000; // Количество вставок для второго метода
+    public static final int DELETION_BY_INDEX = 10_000; // Количество удалений по индексу
+    public static final int DELETION_BY_VALUE = 10_000;// удаления по значению
 
     public static void main(String[] args) {
         List<Integer> arrayList = new ArrayList<>(); // ArrayList для тестирования
