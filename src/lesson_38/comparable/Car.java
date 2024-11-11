@@ -16,6 +16,9 @@ public class Car implements Comparable<Car> {
         this.speed = speed;
     }
 
+    public Car(String toyota, int year) {
+    }
+
     public String getModel() {
         return model;
     }
@@ -53,5 +56,9 @@ public class Car implements Comparable<Car> {
     @Override
     public int compareTo(Car other) {
         return this.model.compareTo(other.model);
+    }
+
+    public int getWeight() {
+    return speed;
     }
 }
