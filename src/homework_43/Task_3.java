@@ -33,11 +33,13 @@ public class Task_3 {
         );
 
         // Filter the list of people who are older than 25 and live in Berlin
-        List<Person> filteredPersons = filterPerson(persons, 25, "Berlin");
+        List<Person> filteredPersons = filterPerson(persons, 24, "Berlin");
 
         // Print the filtered list of people
         filteredPersons.forEach(System.out::println);
     }
+
+
 
     // Method to filter the list of people by age and city
     private static List<Person> filterPerson(List<Person> persons, int age, String city) {
